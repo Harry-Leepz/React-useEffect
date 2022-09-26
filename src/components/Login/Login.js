@@ -20,18 +20,26 @@ const Login = (props) => {
     isValid: false,
   });
 
-  useEffect(() => {
-    setFormIsValid(
-      enteredEmail.includes("@") && enteredPassword.trim().length > 6
-    );
-  }, [enteredEmail, enteredPassword]);
+  // useEffect(() => {
+  //   setFormIsValid(
+  //     enteredEmail.includes("@") && enteredPassword.trim().length > 6
+  //   );
+  // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
+
+    setFormIsValid(
+      enteredEmail.includes("@") && enteredPassword.trim().length > 6
+    );
   };
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
+
+    setFormIsValid(
+      enteredEmail.includes("@") && enteredPassword.trim().length > 6
+    );
   };
 
   const validateEmailHandler = () => {
